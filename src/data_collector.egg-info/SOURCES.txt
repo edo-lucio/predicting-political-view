@@ -1,0 +1,16 @@
+setup.py
+src/Moral_Foundation_FrameAxis/__init__.py
+src/Moral_Foundation_FrameAxis/frameAxis.py
+src/Moral_Foundation_FrameAxis/scorer.py
+src/Moral_Foundation_FrameAxis/training_w2v.py
+src/data_collection/__init__.py
+src/data_collection/collect.py
+src/data_collection/collector.py
+src/data_collection/get_posts.py
+src/data_collection/processing.py
+src/data_collector.egg-info/PKG-INFO
+src/data_collector.egg-info/SOURCES.txt
+src/data_collector.egg-info/dependency_links.txt
+src/data_collector.egg-info/entry_points.txt
+src/data_collector.egg-info/requires.txt
+src/data_collector.egg-info/top_level.txt

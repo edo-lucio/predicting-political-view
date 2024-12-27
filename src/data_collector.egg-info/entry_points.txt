@@ -1,0 +1,3 @@
+[console_scripts]
+collect = data_collection.collect:main
+score = Moral_Foundation_FrameAxis.scorer:main

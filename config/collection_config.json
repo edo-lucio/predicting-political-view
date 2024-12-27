@@ -1,0 +1,14 @@
+{
+    "reddit": {
+        "auth_url": "https://www.reddit.com/api/v1/access_token", 
+        "base_url": "https://oauth.reddit.com",
+
+        "collection_configs": [
+            {
+                "subreddit": "wayofthebern", 
+                "number_of_posts_per_users": 1000,
+                "label": "d"
+            }
+        ]
+    }
+}
