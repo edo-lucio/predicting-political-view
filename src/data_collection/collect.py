@@ -39,8 +39,8 @@ def collect_data(collection_configs: dict, content: str = "skip", users_limit: i
     collector = DataCollector(**credentials)
 
     if content == "posts":
-        users = pd.read_csv("./data1/users.csv")
-        last_user = get_last_collected_user("./data1/posts.csv")
+        users = pd.read_csv("./data/users.csv")
+        last_user = get_last_collected_user("./data/posts.csv")
         last_user_index = get_user_index(users, last_user)
         users = users.iloc[last_user_index:]
 
@@ -50,17 +50,17 @@ def collect_data(collection_configs: dict, content: str = "skip", users_limit: i
         users = collector.get_users(collection_configs["subreddit"], limit=users_limit)
         collector.get_users_posts(users["username"].tolist())
 
-    posts = pd.read_csv("./data1/posts.csv").drop_duplicates()
+    posts = pd.read_csv("./data/posts.csv").drop_duplicates()
     posts = concat_text(posts)
 
-    posts.to_csv("./data1/posts.csv", index=False)
+    posts.to_csv("./data/posts.csv", index=False)
 
     if member_count: 
-        political_subreddits = pd.read_csv("./data1/political_subreddits.csv")["subreddit"].tolist()
-        posts = pd.read_csv("./data1/posts.csv")
+        political_subreddits = pd.read_csv("./data/political_subreddits.csv")["subreddit"].tolist()
+        posts = pd.read_csv("./data/posts.csv")
         posts["member_count"] = posts[posts["subreddit"].isin(political_subreddits)]["subreddit"].apply(lambda x: collector.get_subreddit_member_count(x))
         
-        posts.to_csv("./data1/posts.csv", index=False)
+        posts.to_csv("./data/posts.csv", index=False)
 
 def main():
     parser = argparse.ArgumentParser(description="Reddit Data Collection Script")
